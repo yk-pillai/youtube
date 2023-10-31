@@ -3,6 +3,13 @@ export const YOUTUBE_VIDEOS_URL =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=" +
   GOOGLE_API_KEY;
 
+export const YOUTUBE_CHANNEL =
+  "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&key=" + GOOGLE_API_KEY;
+
+export const YOUTUBE_VIDEO_COMMENTS =
+  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=50&key=" +
+  GOOGLE_API_KEY;
+
 export const YOUTUBE_TEST_DATA = [
   {
     kind: "youtube#video",

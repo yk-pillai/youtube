@@ -192,3 +192,39 @@ export function generateText(length) {
   }
   return result;
 }
+
+export const convertViewsToString = (views) => {
+  const len = views.length;
+  if (len > 6) {
+    return Math.floor(views / 1000000) + "M views";
+  } else if (len > 3) {
+    return Math.floor(views / 1000) + "K views";
+  }
+  return views + " views";
+};
+
+export const timeAgo = (dateString) => {
+  const now = new Date();
+  const pastDate = new Date(dateString);
+  const timeDifference = now - pastDate;
+  const seconds = Math.floor(timeDifference / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(months / 12);
+
+  if (years > 0) {
+    return years + " year" + (years > 1 ? "s" : "") + " ago";
+  } else if (months > 0) {
+    return months + " month" + (months > 1 ? "s" : "") + " ago";
+  } else if (days > 0) {
+    return days + " day" + (days > 1 ? "s" : "") + " ago";
+  } else if (hours > 0) {
+    return hours + " hour" + (hours > 1 ? "s" : "") + " ago";
+  } else if (minutes > 0) {
+    return minutes + " minute" + (minutes > 1 ? "s" : "") + " ago";
+  } else {
+    return seconds + " second" + (seconds > 1 ? "s" : "") + " ago";
+  }
+};

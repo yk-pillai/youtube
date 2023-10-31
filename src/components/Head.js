@@ -8,7 +8,7 @@ const Head = () => {
   const [searchtext, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const searchCache = useSelector((store) => store.cache);
+  const searchCache = useSelector((store) => store.cache.search);
   const dispatch = useDispatch();
   const handleHamMenu = () => {
     dispatch(toggleHamMenu());
@@ -44,7 +44,7 @@ const Head = () => {
   }, [searchtext]);
 
   return (
-    <div className="grid grid-flow-col p-1 shadow-lg fixed bg-white w-full">
+    <div className="grid grid-flow-col p-1 fixed bg-white w-full">
       <div className="col-span-1 flex">
         <img
           className="h-16 cursor-pointer"
@@ -69,11 +69,12 @@ const Head = () => {
         <div className="flex">
           <input
             type="text"
-            className="h-9 border border-gray-200 rounded-l-full w-1/2 ml-40"
+            className="h-9 border border-gray-200 rounded-l-full w-1/2 ml-40 p-3"
             value={searchtext}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
+            placeholder="Search"
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setShowSuggestions(false)}
           ></input>
@@ -84,7 +85,7 @@ const Head = () => {
           ></img>
         </div>
         {suggestions.length !== 0 && showSuggestions && (
-          <div className="border border-gray-200 rounded-lg w-[720px] ml-40 fixed bg-gray-100 py-2">
+          <div className="border border-gray-200 rounded-lg w-[720px] ml-40 bg-gray-100 py-2 fixed">
             <ul>
               {suggestions.map((suggestion) => {
                 return (

@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { closeHamMenu } from '../utils/appSlice';
 import CommentsContainer from './CommentsContainer';
 import LiveChat from './LiveChat';
+import VideoInfo from './VideoInfo';
+import WatchPageVideoContainer from './WatchPageVideoContainer';
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -13,23 +15,22 @@ const WatchPage = () => {
     dispatch(closeHamMenu());
   },[])
   return (
-    <>
-      <div className='p-2 ml-20'>
+    <div className="mt-20 mx-24 flex w-full">
+      <div className="p-2 w-[74%]">
         <iframe
-          width="1300"
-          height="600"
+        className='rounded-lg'
+          width="100%"
+          height="700"
           src={"https://www.youtube.com/embed/" + searchParams.get("v")}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-        <CommentsContainer />
+        <VideoInfo/>
       </div>
-      <div className='w-full my-2 ml-6 mr-10'>
-        <LiveChat />
-      </div>
-    </>
+      <WatchPageVideoContainer/>
+    </div>
   );
 }
 

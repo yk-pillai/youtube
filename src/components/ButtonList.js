@@ -6,6 +6,7 @@ const ButtonList = () => {
   const buttonData = useSelector(store => store.tag.buttons)
   const buttons = Object.keys(buttonData);
   const dispatch = useDispatch();
+  const currButton = useSelector((store) => store.tag.clickedButton);
 
   const clickedButton = (button) => {
     dispatch(setClickedButton(button))
@@ -23,7 +24,7 @@ const ButtonList = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex w-[87.5%] bg-white right-0 fixed -z-10">
       <img
         onClick={() => scrollContainer(-1)}
         className="h-8 mt-3"
@@ -34,7 +35,11 @@ const ButtonList = () => {
         {buttons.map((button) => (
           <div
             onClick={() => clickedButton(button)}
-            className="p-2 bg-gray-200 m-2 rounded-lg cursor-pointer"
+            className={
+              currButton === button
+                ? "p-2 bg-gray-900 m-2 rounded-lg cursor-pointer font-medium text-white"
+                : "p-2 bg-gray-200 m-2 rounded-lg cursor-pointer font-medium"
+            }
             key={button}
           >
             {button}

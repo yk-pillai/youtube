@@ -1,89 +1,19 @@
-const CommentsContainer = () => {
-  const commentsList = [
-    {
-      name: "abc",
-      text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-      replies: [
-        {
-          name: "abc",
-          text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-          replies: [
-            {
-              name: "abc",
-              text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-              replies: [
-                {
-                  name: "abc",
-                  text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-                  replies: [],
-                },
-                {
-                  name: "abc",
-                  text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-                  replies: [],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          name: "abc",
-          text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-          replies: [],
-        },
-      ],
-    },
-    {
-      name: "abc",
-      text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-      replies: [
-        {
-          name: "abc",
-          text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-          replies: [],
-        },
-      ],
-    },
-    {
-      name: "abc",
-      text: "Lorem kjas fjag aksuh uytas iu, iaysd dfuk.",
-      replies: [],
-    },
-  ];
+import React from 'react'
+import { BsSortUp } from 'react-icons/bs';
+import Comment from './Comment';
 
-  const Comment = ({comment}) => {
-    return (
-      <div className="flex m-2 bg-slate-50">
-        <img
-          className="h-12 w-12"
-          alt="com"
-          src="https://i.pinimg.com/474x/76/4d/59/764d59d32f61f0f91dec8c442ab052c5.jpg"
-        />
-        <div className="">
-          <div className="font-bold">{comment.name}</div>
-          <div>{comment.text}</div>
-          {comment.replies &&
-            comment.replies.map((com, index) => (
-              <div
-                key={index}
-                className="border border-l-black border-y-0 border-r-0 m-2"
-              >
-                <Comment key={index} comment={com} />
-              </div>
-            ))}
-        </div>
-      </div>
-    );
-  }
-
+const CommentsContainer = ({comments}) => {
   return (
-    <div className="p-2">
-      <h1 className="font-bold">Comments</h1>
-      {commentsList.map((c, index) => (
-        <Comment key={index} comment={c} />
-      ))}
+    <div>
+      <div className='flex gap-8 items-center'>
+        <div className='font-extrabold text-lg'>{`${comments.items.length} Comments`}</div>
+        <div className='flex items-center'><BsSortUp size={28}/> Sort by</div>
+      </div>
+      <div className='mt-8'>{comments.items.map((comment)=>{
+        return <Comment comment={comment} key={comment.id}/>
+      })}</div>
     </div>
   );
-};
+}
 
-export default CommentsContainer;
+export default CommentsContainer

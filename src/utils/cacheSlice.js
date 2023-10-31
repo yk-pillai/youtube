@@ -1,17 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const cacheSlice = createSlice({
-  name: caches,
-  initialState: {},
+  name: "caches",
+  initialState: {
+    search:{},
+    channel:{}
+  },
   reducers : {
     storeCache: (state, action) => {
-      return Object.assign(state, action.payload)
+      Object.assign(state.search, action.payload)
     },
     resetCache: () => {
       return {};
+    },
+    addChannelData: (state, action) => {
+      Object.assign(state.channel, action.payload);
     }
   }
 })
 
 export default cacheSlice.reducer;
-export const { storeCache, resetCache } = cacheSlice.actions;
+export const { storeCache, resetCache, addChannelData } = cacheSlice.actions;
