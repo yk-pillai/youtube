@@ -54,14 +54,32 @@ const Sidebar = () => {
         </List>
       </ul>
       <div className="border border-b-gray-400 border-x-0 py-5">
-        <h1 className='text-lg font-bold'>Explore</h1>
+        <h1 className="text-lg font-bold">Explore</h1>
         <ul>
-          <List><FiTrendingUp/>Trending</List>
-          <List><HiOutlineShoppingBag/>Shopping</List>
-          <List><BsMusicNoteBeamed/>Music</List>
-          <List><GiFilmSpool/>Film</List>
-          <List><MdLiveHelp/>Live</List>
-          <List><BsNewspaper/>News</List>
+          <List>
+            <FiTrendingUp />
+            Trending
+          </List>
+          <List>
+            <HiOutlineShoppingBag />
+            Shopping
+          </List>
+          <List>
+            <BsMusicNoteBeamed />
+            Music
+          </List>
+          <List>
+            <GiFilmSpool />
+            Film
+          </List>
+          <List>
+            <MdLiveHelp />
+            Live
+          </List>
+          <List>
+            <BsNewspaper />
+            News
+          </List>
         </ul>
       </div>
       <ul className=" py-5">

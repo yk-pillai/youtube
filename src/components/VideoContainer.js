@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { YOUTUBE_TEST_DATA, YOUTUBE_CHANNEL } from '../utils/constants';
 import { addChannelData } from '../utils/cacheSlice';
+import ShimmerVideoContainer from './ShimmerVideoContainer';
 
 const VideoContainer = () => {
   const dispatch = useDispatch();
@@ -82,9 +83,9 @@ const VideoContainer = () => {
       </div>
     );
   }
-
+  if(!buttonVideoList.hasOwnProperty('All')) return <ShimmerVideoContainer/>
   return (
-    <div className="flex flex-wrap mt-12 absolute -z-10">
+    <div className="flex flex-wrap mt-12 absolute -z-20">
       {buttonVideoList[clickedButton] ? (
         <InfiniteScroll
           className="flex flex-wrap"

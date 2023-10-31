@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setClickedButton } from '../utils/buttonTagSlice';
+import ShimmerButtonList from './ShimmerButtonList';
 
 const ButtonList = () => {
   const buttonData = useSelector(store => store.tag.buttons)
@@ -22,12 +23,12 @@ const ButtonList = () => {
       container.scrollLeft += scrollAmount; // Scroll to the right (next)
     }
   };
-
+  if(!buttons.length) return <ShimmerButtonList/>
   return (
     <div className="flex w-[87.5%] bg-white right-0 fixed -z-10">
       <img
         onClick={() => scrollContainer(-1)}
-        className="h-8 mt-3"
+        className="h-8 mt-3 cursor-pointer"
         src="https://w7.pngwing.com/pngs/198/222/png-transparent-computer-icons-arrow-symbol-less-than-sign-arrow-angle-triangle-black-thumbnail.png"
         alt="prev"
       ></img>
@@ -48,7 +49,7 @@ const ButtonList = () => {
       </div>
       <img
         onClick={() => scrollContainer(1)}
-        className="h-8 rotate-180 mt-3"
+        className="h-8 rotate-180 mt-3 cursor-pointer"
         alt="next"
         src="https://w7.pngwing.com/pngs/198/222/png-transparent-computer-icons-arrow-symbol-less-than-sign-arrow-angle-triangle-black-thumbnail.png"
       ></img>
