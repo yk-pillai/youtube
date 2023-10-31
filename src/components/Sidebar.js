@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AiOutlineHome } from "react-icons/ai";
 import { LuVideotape } from 'react-icons/lu'
-import { MdLiveHelp, MdReportGmailerrorred, MdSubscriptions, MdSwitchAccessShortcut } from "react-icons/md";
-import { BsFillPersonLinesFill, BsLightbulb, BsLightbulbFill, BsLightbulbOffFill, BsNewspaper } from "react-icons/bs";
+import { MdLiveHelp, MdReportGmailerrorred, MdSubscriptions } from "react-icons/md";
+import { BsFillPersonLinesFill, BsLightbulb, BsNewspaper } from "react-icons/bs";
 import { GrHistory, GrSettingsOption } from "react-icons/gr";
 import { FiHelpCircle, FiTrendingUp } from "react-icons/fi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { BsMusicNoteBeamed } from "react-icons/bs";
-import { GiFilmSpool, GiSwitchWeapon } from "react-icons/gi";
+import { GiFilmSpool } from "react-icons/gi";
 
 import styled from 'styled-components';
 

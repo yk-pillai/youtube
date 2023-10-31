@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { closeHamMenu } from '../utils/appSlice';
-import CommentsContainer from './CommentsContainer';
-import LiveChat from './LiveChat';
+// import CommentsContainer from './CommentsContainer';
+// import LiveChat from './LiveChat';
 import VideoInfo from './VideoInfo';
 import WatchPageVideoContainer from './WatchPageVideoContainer';
 
@@ -14,6 +14,7 @@ const WatchPage = () => {
   useEffect(()=>{
     dispatch(closeHamMenu());
   },[])
+
   return (
     <div className="mt-20 mx-24 flex w-full">
       <div className="p-2 w-[74%]">

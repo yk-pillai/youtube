@@ -3,13 +3,12 @@ import Body from './components/Body';
 import Head from './components/Head';
 import { Provider } from 'react-redux';
 import store from './utils/store';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
 import WatchPage from './components/WatchPage';
 import Learn from './components/Learn';
 
-
-const appRouter = createBrowserRouter([
+const appRouter = createHashRouter([
   {
     path: "/",
     element: <Body />,

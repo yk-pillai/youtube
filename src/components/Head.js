@@ -19,7 +19,7 @@ const Head = () => {
         setSuggestions(searchCache[searchtext]);
       } else {
         const data = await fetch(
-          "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=" +
+          "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=" +
             searchtext
         );
         const json = await data.json();

@@ -37,6 +37,7 @@ const VideoInfo = () => {
           <img
             className="w-10 h-10 rounded-full"
             src={channel?.snippet.thumbnails.default.url}
+            alt="thumbnail"
           ></img>
           <div>
             <div className="font-bold">{data[0].snippet.channelTitle}</div>

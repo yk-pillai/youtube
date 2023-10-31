@@ -8,6 +8,7 @@ const Comment = ({ comment }) => {
         <img
           className="w-10 h-10 rounded-full"
           src={comment.snippet.topLevelComment.snippet.authorProfileImageUrl}
+          alt="author-profile"
         ></img>
         <div className="">
           <div className="flex gap-2 items-center">
