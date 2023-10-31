@@ -52,7 +52,7 @@ const Head = () => {
           src="https://www.cuomomarine.it/wp-content/uploads/iconham.png"
           onClick={() => handleHamMenu()}
         ></img>
-        <a href="/">
+        <a href="/youtube">
           <img
             className="h-16"
             alt="logo"
